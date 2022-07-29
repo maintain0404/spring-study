@@ -1,4 +1,4 @@
-package com.taein.springboot.example.member.service;
+package com.taein.springboot.example.domain.member.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import com.taein.springboot.example.core.AppConfig;
 import com.taein.springboot.example.domain.member.entity.Member;
 import com.taein.springboot.example.domain.member.enums.Grade;
-import com.taein.springboot.example.domain.member.service.MemberService;
 
 import org.assertj.core.api.Assertions;
 

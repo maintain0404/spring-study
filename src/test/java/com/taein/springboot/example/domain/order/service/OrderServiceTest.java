@@ -1,5 +1,5 @@
 
-package com.taein.springboot.example.order.service;
+package com.taein.springboot.example.domain.order.service;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +10,6 @@ import com.taein.springboot.example.domain.member.entity.Member;
 import com.taein.springboot.example.domain.member.enums.Grade;
 import com.taein.springboot.example.domain.member.service.MemberService;
 import com.taein.springboot.example.domain.order.entity.Order;
-import com.taein.springboot.example.domain.order.service.OrderService;
 
 public class OrderServiceTest {
     MemberService memberService;

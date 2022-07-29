@@ -1,11 +1,9 @@
-package com.taein.springboot.example.discount.policy;
+package com.taein.springboot.example.domain.discount.policy;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.taein.springboot.example.domain.discount.policy.DiscountPolicy;
-import com.taein.springboot.example.domain.discount.policy.DiscountPolicyRateImpl;
 import com.taein.springboot.example.domain.member.entity.Member;
 import com.taein.springboot.example.domain.member.enums.Grade;
 
