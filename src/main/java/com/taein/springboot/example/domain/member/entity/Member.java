@@ -1,6 +1,6 @@
-package com.taein.springboot.example.member.entity;
+package com.taein.springboot.example.domain.member.entity;
 
-import com.taein.springboot.example.member.enums.Grade;
+import com.taein.springboot.example.domain.member.enums.Grade;
 
 import lombok.Getter;
 import lombok.Setter;

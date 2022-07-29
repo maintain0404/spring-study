@@ -1,4 +1,4 @@
-package com.taein.springboot.example.order.entity;
+package com.taein.springboot.example.domain.order.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

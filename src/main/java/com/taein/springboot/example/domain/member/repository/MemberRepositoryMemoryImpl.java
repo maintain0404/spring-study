@@ -1,9 +1,9 @@
-package com.taein.springboot.example.member.repository;
+package com.taein.springboot.example.domain.member.repository;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.taein.springboot.example.member.entity.Member;
+import com.taein.springboot.example.domain.member.entity.Member;
 
 public class MemberRepositoryMemoryImpl implements MemberRepository {
 

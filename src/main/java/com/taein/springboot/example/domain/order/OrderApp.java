@@ -1,35 +1,25 @@
+package com.taein.springboot.example.domain.order;
 
-package com.taein.springboot.example.order.service;
-
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import com.taein.springboot.example.core.AppConfig;
 import com.taein.springboot.example.domain.member.entity.Member;
 import com.taein.springboot.example.domain.member.enums.Grade;
 import com.taein.springboot.example.domain.member.service.MemberService;
-import com.taein.springboot.example.domain.order.entity.Order;
 import com.taein.springboot.example.domain.order.service.OrderService;
+import com.taein.springboot.example.domain.order.entity.Order;
 
-public class OrderServiceTest {
-    MemberService memberService;
-    OrderService orderService;
-
-    @BeforeEach
-    public void beforeEach() {
+public class OrderApp {
+    public static void main(String[] args) {
         AppConfig appConfig = new AppConfig();
-        memberService = appConfig.memberService();
-        orderService = appConfig.orderService();
-    }
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
-    @Test
-    void createOrder() {
         long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
         memberService.join(member);
 
         Order order = orderService.createOrder(memberId, "itemA", 10000);
-        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+
+        System.out.println("order = " + order);
     }
 }

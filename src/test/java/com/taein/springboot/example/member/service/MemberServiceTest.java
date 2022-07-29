@@ -1,15 +1,24 @@
 package com.taein.springboot.example.member.service;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.taein.springboot.example.member.entity.Member;
-import com.taein.springboot.example.member.enums.Grade;
+import com.taein.springboot.example.core.AppConfig;
+import com.taein.springboot.example.domain.member.entity.Member;
+import com.taein.springboot.example.domain.member.enums.Grade;
+import com.taein.springboot.example.domain.member.service.MemberService;
 
 import org.assertj.core.api.Assertions;
 
 public class MemberServiceTest {
     
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService;
+
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
 
     @Test
     void join() {
