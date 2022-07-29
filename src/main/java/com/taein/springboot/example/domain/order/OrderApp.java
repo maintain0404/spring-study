@@ -1,5 +1,5 @@
 package com.taein.springboot.example.domain.order;
-
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.taein.springboot.example.core.AppConfig;
 import com.taein.springboot.example.domain.member.entity.Member;
@@ -10,9 +10,10 @@ import com.taein.springboot.example.domain.order.entity.Order;
 
 public class OrderApp {
     public static void main(String[] args) {
-        AppConfig appConfig = new AppConfig();
-        MemberService memberService = appConfig.memberService();
-        OrderService orderService = appConfig.orderService();
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+        OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
+        applicationContext.close();
 
         long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
