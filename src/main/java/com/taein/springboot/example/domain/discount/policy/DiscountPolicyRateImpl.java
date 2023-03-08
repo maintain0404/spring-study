@@ -1,8 +1,11 @@
 package com.taein.springboot.example.domain.discount.policy;
 
+import org.springframework.stereotype.Component;
+
 import com.taein.springboot.example.domain.member.entity.Member;
 import com.taein.springboot.example.domain.member.enums.Grade;
 
+@Component
 public class DiscountPolicyRateImpl implements DiscountPolicy {
 
     private int discountPercent = 10;

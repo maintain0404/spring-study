@@ -11,7 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.taein.springboot.example.domain.member.service.MemberService;
 import com.taein.springboot.example.domain.member.service.MemberServiceImpl;
 
-class ApplicationContextInfoTest {
+class BeanFieldTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
     @Test
