@@ -1,9 +1,11 @@
 package com.taein.springboot.example.domain.member.repository;
 
+import java.util.Optional;
+
 import com.taein.springboot.example.domain.member.entity.Member;
 
 public interface MemberRepository {
-    void save(Member member);
+    Member save(Member member);
 
-    Member findById(Long memberId);
+    Optional<Member> findById(Long memberId);
 }

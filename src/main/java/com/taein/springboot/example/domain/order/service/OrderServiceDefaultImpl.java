@@ -9,7 +9,7 @@ import com.taein.springboot.example.domain.member.repository.MemberRepository;
 import com.taein.springboot.example.domain.order.entity.Order;
 
 @Component
-public class OrderServiceDefaultImpl implements OrderService{
+public class OrderServiceDefaultImpl implements OrderService {
     private MemberRepository memberRepository;
     private DiscountPolicy discountPolicy;
 
@@ -21,7 +21,7 @@ public class OrderServiceDefaultImpl implements OrderService{
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
-        Member member = memberRepository.findById(memberId);
+        Member member = memberRepository.findById(memberId).get();
         int discountedPrice = discountPolicy.discount(member, itemPrice);
 
         return new Order(memberId, itemName, itemPrice, discountedPrice);

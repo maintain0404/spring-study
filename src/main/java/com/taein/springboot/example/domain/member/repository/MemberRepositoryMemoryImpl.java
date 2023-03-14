@@ -2,24 +2,26 @@ package com.taein.springboot.example.domain.member.repository;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.taein.springboot.example.domain.member.entity.Member;
 
-@Component
+@Repository
 public class MemberRepositoryMemoryImpl implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
 
     @Override
-    public Member findById(Long memberId) {
-        return store.get(memberId);
+    public Optional<Member> findById(Long memberId) {
+        return Optional.of(store.get(memberId));
     }
 
     @Override
-    public void save(Member member) {
+    public Member save(Member member) {
         store.put(member.getId(), member);
+        return member;
     }
 
 }

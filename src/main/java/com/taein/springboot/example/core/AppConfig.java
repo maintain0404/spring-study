@@ -24,9 +24,8 @@ public class AppConfig {
     @Bean
     public OrderService orderService() {
         return new OrderServiceDefaultImpl(
-            new MemberRepositoryMemoryImpl(),
-            new DiscountPolicyFixedImpl()
-        );
+                new MemberRepositoryMemoryImpl(),
+                new DiscountPolicyFixedImpl());
     }
 
     @Bean
