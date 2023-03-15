@@ -1,30 +1,27 @@
-package com.taein.springboot.example.domain.order.service;
+// package com.taein.springboot.example.domain.order.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+// import java.util.ArrayList;
 
-import com.taein.springboot.example.domain.discount.policy.DiscountPolicy;
-import com.taein.springboot.example.domain.member.entity.Member;
-import com.taein.springboot.example.domain.member.repository.MemberRepository;
-import com.taein.springboot.example.domain.order.entity.Order;
+// import org.springframework.stereotype.Component;
 
-@Component
-public class OrderServiceDefaultImpl implements OrderService {
-    private MemberRepository memberRepository;
-    private DiscountPolicy discountPolicy;
+// import com.taein.springboot.example.domain.discount.enums.DiscountPolicy;
+// import com.taein.springboot.example.domain.member.entity.Member;
+// import com.taein.springboot.example.domain.member.repository.MemberRepository;
+// import com.taein.springboot.example.domain.order.entity.Order;
+// import com.taein.springboot.example.domain.order.entity.OrderedItem;
 
-    @Autowired
-    public OrderServiceDefaultImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+// @Component
+// public class OrderServiceDefaultImpl implements OrderService {
+//     private MemberRepository memberRepository;
 
-    @Override
-    public Order createOrder(Long memberId, String itemName, int itemPrice) {
-        Member member = memberRepository.findById(memberId).get();
-        int discountedPrice = discountPolicy.discount(member, itemPrice);
+//     public OrderServiceDefaultImpl(MemberRepository memberRepository) {
+//         this.memberRepository = memberRepository;
+//     }
 
-        return new Order(memberId, itemName, itemPrice, discountedPrice);
-    }
+//     @Override
+//     public Order createOrder(Long memberId, Long itemId, DiscountPolicy discountPolicy) {
+//         Member member = memberRepository.findById(memberId).get();
+//         return new Order(member, new ArrayList<OrderedItem>(), memberId, discountPolicy);
+//     }
 
-}
+// }

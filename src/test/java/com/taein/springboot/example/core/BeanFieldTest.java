@@ -1,6 +1,7 @@
 package com.taein.springboot.example.core;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,8 +9,8 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.taein.springboot.example.domain.member.service.MemberService;
-import com.taein.springboot.example.domain.member.service.MemberServiceImpl;
+import com.taein.springboot.example.domain.discount.policy.DiscountPolicyStrategy;
+import com.taein.springboot.example.domain.discount.policy.DiscountPolicyStrategyNoneImpl;
 
 class BeanFieldTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -40,28 +41,28 @@ class BeanFieldTest {
     @Test
     @DisplayName("Bean 이름으로 조회")
     void findBeanByName() {
-        MemberService memberService = ac.getBean("memberService", MemberService.class);
-        assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
+        DiscountPolicyStrategy discountPolicyStrategy = ac.getBean("discountPolicyStrategy", DiscountPolicyStrategy.class);
+        assertThat(discountPolicyStrategy).isInstanceOf(DiscountPolicyStrategy.class);
     }
 
     @Test
     @DisplayName("타입으로만 조회")
     void findBeanByType() {
-        MemberService memberService = ac.getBean(MemberService.class);
-        assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
+        DiscountPolicyStrategy discountPolicyStrategy = ac.getBean(DiscountPolicyStrategy.class);
+        assertThat(discountPolicyStrategy).isInstanceOf(DiscountPolicyStrategy.class);
     }
 
     @Test
     @DisplayName("구체 타입으로 조회")
     void findBeanByName2() {
-        MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
-        assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
+        DiscountPolicyStrategy discountPolicyStrategy = ac.getBean("discountPolicyStrategy", DiscountPolicyStrategyNoneImpl.class);
+        assertThat(discountPolicyStrategy).isInstanceOf(DiscountPolicyStrategyNoneImpl.class);
     }
 
     @Test
     @DisplayName("이름없이 조회")
     void findBeanWithoutName() {
-        Assertions.assertThrows(NoSuchBeanDefinitionException.class , () -> ac.getBean("NO", MemberService.class));
+        Assertions.assertThrows(NoSuchBeanDefinitionException.class , () -> ac.getBean("NO", DiscountPolicyStrategy.class));
     }
 }
 

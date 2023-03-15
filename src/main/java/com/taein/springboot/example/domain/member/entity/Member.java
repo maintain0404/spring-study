@@ -1,12 +1,17 @@
 package com.taein.springboot.example.domain.member.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.taein.springboot.example.domain.member.enums.Grade;
+import com.taein.springboot.example.domain.order.entity.Order;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -29,9 +34,11 @@ public class Member {
     private String name;
     private Grade grade;
 
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<Order>();
+
     public Member(String name, Grade grade) {
         this.name = name;
         this.grade = grade;
-
     }
 }

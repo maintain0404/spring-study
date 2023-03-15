@@ -1,21 +1,22 @@
 package com.taein.springboot.example.domain.discount.policy;
 
-import org.springframework.stereotype.Component;
-
 import com.taein.springboot.example.domain.member.entity.Member;
 import com.taein.springboot.example.domain.member.enums.Grade;
 
-@Component
-public class DiscountPolicyRateImpl implements DiscountPolicy {
+public class DiscountPolicyStrategyRateImpl implements DiscountPolicyStrategy {
 
-    private int discountPercent = 10;
+    private Long discountPercent;
+
+    public DiscountPolicyStrategyRateImpl(Long amount) {
+        this.discountPercent = amount;
+    }
 
     @Override
-    public int discount(Member member, int price) {
+    public Long discount(Member member, Long price) {
         if (member.getGrade() == Grade.VIP) {
             return price * discountPercent / 100;
         } else {
-            return 0;
+            return price;
         }
     }
     
