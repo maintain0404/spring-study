@@ -14,10 +14,9 @@ public class DiscountPolicyStrategyRateImpl implements DiscountPolicyStrategy {
     @Override
     public Long discount(Member member, Long price) {
         if (member.getGrade() == Grade.VIP) {
-            return price * discountPercent / 100;
+            return price - (price * discountPercent / 100);
         } else {
             return price;
         }
-    }
-    
+    }   
 }
