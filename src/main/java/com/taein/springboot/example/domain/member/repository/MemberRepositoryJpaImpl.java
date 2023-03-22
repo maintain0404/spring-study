@@ -2,8 +2,8 @@ package com.taein.springboot.example.domain.member.repository;
 
 import java.util.Optional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;

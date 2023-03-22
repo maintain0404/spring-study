@@ -1,6 +1,6 @@
 package com.taein.springboot.example.domain.member.repository;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
