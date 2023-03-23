@@ -7,10 +7,11 @@ import com.taein.springboot.example.domain.member.enums.Grade;
 public class DiscountPolicyStrategyFixedImpl implements DiscountPolicyStrategy {
 
     private Long discountFixAmount;
-    
+
     public DiscountPolicyStrategyFixedImpl(Long amount) {
         this.discountFixAmount = amount;
     }
+
     @Override
     public Long discount(Member member, Long price) {
         if (member.getGrade() == Grade.VIP) {

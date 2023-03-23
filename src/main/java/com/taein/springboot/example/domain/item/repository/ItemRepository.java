@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.taein.springboot.example.domain.item.entity.Item;
 
 @Primary
-public interface ItemRepository extends JpaRepository<Item, Long>  {
-    
+public interface ItemRepository extends JpaRepository<Item, Long> {
+
 }

@@ -13,9 +13,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.context.annotation.ComponentScan.Filter;
 
 public class ComponentFilterAppConfigTest {
-    
+
     @Test
-    @SuppressWarnings("resource")  // ignore ac warning
+    @SuppressWarnings("resource") // ignore ac warning
     void filterScan() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
 
@@ -23,16 +23,12 @@ public class ComponentFilterAppConfigTest {
         assertThat(bi).isNotNull();
 
         Assertions.assertThrows(
-            NoSuchBeanDefinitionException.class,
-            () -> ac.getBean("beanExcluded", BeanExcluded.class)
-        );
+                NoSuchBeanDefinitionException.class,
+                () -> ac.getBean("beanExcluded", BeanExcluded.class));
     }
 
     @Configuration
-    @ComponentScan(
-        includeFilters = @Filter(type = FilterType.ANNOTATION, classes = IncludeComponent.class),
-        excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = ExcludeComponent.class)
-    )
+    @ComponentScan(includeFilters = @Filter(type = FilterType.ANNOTATION, classes = IncludeComponent.class), excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = ExcludeComponent.class))
     static class ComponentFilterAppConfig {
 
     }

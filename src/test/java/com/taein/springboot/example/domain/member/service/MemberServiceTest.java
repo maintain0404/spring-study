@@ -15,7 +15,7 @@ import org.assertj.core.api.Assertions;
 @Disabled("JPA 미적용 버전의 테스트. 리팩토링 필요")
 @DataJpaTest
 public class MemberServiceTest {
-    
+
     @Autowired
     MemberService memberService;
 

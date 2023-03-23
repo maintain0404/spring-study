@@ -1,4 +1,5 @@
 package com.taein.springboot.example.core;
+
 import com.taein.springboot.example.ExampleApplication;
 import com.taein.springboot.example.domain.member.service.MemberService;
 
@@ -9,12 +10,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import static org.assertj.core.api.Assertions.*;
 
-
 @SpringBootTest
 public class AutoAppConfigTest {
 
     @Test
-    @SuppressWarnings("resource")  // Ignore ac warning
+    @SuppressWarnings("resource") // Ignore ac warning
     void basicScan() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(ExampleApplication.class);
 

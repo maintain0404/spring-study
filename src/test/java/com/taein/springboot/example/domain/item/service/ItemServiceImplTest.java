@@ -6,7 +6,7 @@ import org.mockito.Mock;
 import com.taein.springboot.example.domain.item.repository.ItemRepository;
 
 public class ItemServiceImplTest implements ItemServiceTest<ItemService, ItemRepository> {
-    
+
     @Mock
     ItemRepository itemRepository;
 
@@ -22,5 +22,5 @@ public class ItemServiceImplTest implements ItemServiceTest<ItemService, ItemRep
     public ItemRepository getRepository() {
         // TODO Auto-generated method stub
         return this.itemRepository;
-    }    
+    }
 }

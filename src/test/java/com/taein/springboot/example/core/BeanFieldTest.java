@@ -41,7 +41,8 @@ class BeanFieldTest {
     @Test
     @DisplayName("Bean 이름으로 조회")
     void findBeanByName() {
-        DiscountPolicyStrategy discountPolicyStrategy = ac.getBean("discountPolicyStrategy", DiscountPolicyStrategy.class);
+        DiscountPolicyStrategy discountPolicyStrategy = ac.getBean("discountPolicyStrategy",
+                DiscountPolicyStrategy.class);
         assertThat(discountPolicyStrategy).isInstanceOf(DiscountPolicyStrategy.class);
     }
 
@@ -55,16 +56,15 @@ class BeanFieldTest {
     @Test
     @DisplayName("구체 타입으로 조회")
     void findBeanByName2() {
-        DiscountPolicyStrategy discountPolicyStrategy = ac.getBean("discountPolicyStrategy", DiscountPolicyStrategyNoneImpl.class);
+        DiscountPolicyStrategy discountPolicyStrategy = ac.getBean("discountPolicyStrategy",
+                DiscountPolicyStrategyNoneImpl.class);
         assertThat(discountPolicyStrategy).isInstanceOf(DiscountPolicyStrategyNoneImpl.class);
     }
 
     @Test
     @DisplayName("이름없이 조회")
     void findBeanWithoutName() {
-        Assertions.assertThrows(NoSuchBeanDefinitionException.class , () -> ac.getBean("NO", DiscountPolicyStrategy.class));
+        Assertions.assertThrows(NoSuchBeanDefinitionException.class,
+                () -> ac.getBean("NO", DiscountPolicyStrategy.class));
     }
 }
-
-
- 

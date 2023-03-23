@@ -8,7 +8,7 @@ import com.taein.springboot.example.domain.member.entity.Member;
 import com.taein.springboot.example.domain.member.enums.Grade;
 
 public interface DiscountPolicyStrategyTest<T extends DiscountPolicyStrategy> {
-    
+
     T getDiscountPolicyStrategy();
 
     @Test
@@ -27,7 +27,7 @@ public interface DiscountPolicyStrategyTest<T extends DiscountPolicyStrategy> {
         Member member = new Member("memberVIP", Grade.BASIC);
 
         Long discount = getDiscountPolicyStrategy().discount(member, 10000L);
-        
+
         Assertions.assertThat(discount).isEqualTo(10000L);
     }
 

@@ -11,10 +11,10 @@ import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import com.taein.springboot.example.domain.member.service.MemberService;
 
-
 public class RetrieveDuplicatedBeanTest {
 
-    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(RetrieveDuplicatedBeanTestConfig.class);
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(
+            RetrieveDuplicatedBeanTestConfig.class);
 
     @Test
     @DisplayName("타입으로 조회 시 같은 타입이 둘 있으면 중복 오류")
@@ -34,18 +34,18 @@ public class RetrieveDuplicatedBeanTest {
     void findBeanBySubType() {
         Map<String, MemberService> beansOfType = ac.getBeansOfType(MemberService.class);
         Assertions.assertThat(beansOfType.size()).isEqualTo(2);
-        for (String key: beansOfType.keySet()) {
+        for (String key : beansOfType.keySet()) {
             System.out.println("Key = " + key + " value=" + beansOfType.get(key));
         }
     }
 
     @Test
     @DisplayName("Object 하위 타입(모두) 조회")
-    void findAllBeanObjectType() { 
+    void findAllBeanObjectType() {
         Map<String, Object> beansOfType = ac.getBeansOfType(Object.class);
         // Assertions.assertThat(beansOfType.size()).isEqualTo(2);
         // 기본적으로 주입되는 bean이 있어 2개가 아니다.
-        for (String key: beansOfType.keySet()) {
+        for (String key : beansOfType.keySet()) {
             System.out.println("Key = " + key + " value=" + beansOfType.get(key));
         }
     }

@@ -9,7 +9,7 @@ import com.taein.springboot.example.domain.member.service.MemberServiceImpl;
 
 @Configuration
 public class RetrieveDuplicatedBeanTestConfig {
-    
+
     @Bean
     public MemberService memberService1() {
         return new MemberServiceImpl(new MemberRepositoryMemoryImpl());

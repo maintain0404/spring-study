@@ -18,5 +18,5 @@ public class DiscountPolicyStrategyRateImpl implements DiscountPolicyStrategy {
         } else {
             return price;
         }
-    }   
+    }
 }

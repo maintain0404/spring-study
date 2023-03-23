@@ -15,7 +15,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(of = { "id", "name", "price"})
+@ToString(of = { "id", "name", "price" })
 public class Item {
     @Id
     @GeneratedValue

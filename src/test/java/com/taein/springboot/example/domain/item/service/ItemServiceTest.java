@@ -16,6 +16,7 @@ import com.taein.springboot.example.domain.item.repository.ItemRepository;
 public interface ItemServiceTest<T extends ItemService, S extends ItemRepository> {
 
     S getRepository();
+
     T getService();
 
     @Test
@@ -46,7 +47,7 @@ public interface ItemServiceTest<T extends ItemService, S extends ItemRepository
         Mockito.doReturn(Optional.of(ret)).when(repo).save(ret);
 
         ItemDetailDTO dto = service.createItem(ItemCreateDTO.builder().name("name").price(0L).build());
-        
+
         Assertions.assertThat(dto.getName()).isEqualTo("name");
         Assertions.assertThat(dto.getPrice()).isEqualTo(0L);
     }

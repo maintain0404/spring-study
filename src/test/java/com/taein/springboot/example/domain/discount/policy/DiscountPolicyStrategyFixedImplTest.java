@@ -7,7 +7,8 @@ import org.junit.jupiter.api.Test;
 import com.taein.springboot.example.domain.member.entity.Member;
 import com.taein.springboot.example.domain.member.enums.Grade;
 
-public class DiscountPolicyStrategyFixedImplTest implements DiscountPolicyStrategyTest<DiscountPolicyStrategyFixedImpl>{
+public class DiscountPolicyStrategyFixedImplTest
+        implements DiscountPolicyStrategyTest<DiscountPolicyStrategyFixedImpl> {
 
     private final Long amount = 10L;
 
