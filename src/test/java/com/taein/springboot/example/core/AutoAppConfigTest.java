@@ -14,6 +14,7 @@ import static org.assertj.core.api.Assertions.*;
 public class AutoAppConfigTest {
 
     @Test
+    @SuppressWarnings("resource")  // Ignore ac warning
     void basicScan() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(ExampleApplication.class);
 

@@ -15,6 +15,7 @@ import static org.springframework.context.annotation.ComponentScan.Filter;
 public class ComponentFilterAppConfigTest {
     
     @Test
+    @SuppressWarnings("resource")  // ignore ac warning
     void filterScan() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
 
